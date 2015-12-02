@@ -1,0 +1,6 @@
+
+
+class FrontUtilisateurController {
+
+    def index() { }
+}

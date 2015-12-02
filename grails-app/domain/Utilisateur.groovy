@@ -6,6 +6,7 @@ class Utilisateur {
     String prenom;
     String mail;
     String password;
+    boolean isAdmin = false;
     static hasMany = [commentaire:Commentaire, note:Note];
     String toString() { "$mail" }
 

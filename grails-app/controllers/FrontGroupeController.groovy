@@ -1,0 +1,6 @@
+
+
+class FrontGroupeController {
+
+    def index() {}
+}

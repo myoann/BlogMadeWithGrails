@@ -1,0 +1,6 @@
+
+
+class FrontPOIController {
+
+    def index() {}
+}

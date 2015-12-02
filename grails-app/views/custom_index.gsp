@@ -79,10 +79,14 @@
     <div id="page-body" role="main">
         <g:if test="${session.utilisateur}">
             Connecté en tant que ${session.utilisateur} | <g:link controller="utilisateur" action="logout">Se déconnecter</g:link>
+            <g:if test="${session.utilisateur.isAdmin}==true">
+                ADMIN
+            </g:if>
         </g:if>
         <g:else>
             <a href="projet/login">Se connecter</a>
         </g:else>
+
         <div id="controller-list" role="navigation">
             <div id="largeHeadline">Available Controllers:</div>
             <ul id="smallHeadline">

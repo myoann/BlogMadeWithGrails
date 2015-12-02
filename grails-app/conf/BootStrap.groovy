@@ -6,7 +6,7 @@ class BootStrap {
 
     String[] nomGroupe = ["Restaurants", "Hôtels", "Magasins"]
     String[][][] pointsDInterets = [[["Kamogawa","un japonais"],["Chez Pipo","La meilleure Socca"],["La Favola","A l'italienne"],["Aphrodite","Gastronomique, tout simplement"],["Pourquoi pas","Oui, pourquoi pas?"]],[["Negresco","5 étoiles"],["Hi Hôtel","Design"],["La fiancée du pirate","Pour les pirates aventuriers!"],["Villa Saint Exupéry","Petit budget"],["Hôtel Meyerbeer Beach","Encore + petits budgets"]],[["H&M","Made in Sweden"],["Zara","Made in Spain"],["Primark","A petit prix"],["Hugo Boss","Pour les Hommes"],["Pull&Bear","Young and wild and free"]]]
-    String[][] utilisateurs = [["John", "Lennon", "imagine@paris.fr", "prayforparis"], ["Michel", "Polnareff", "michel75@free.fr", "123456789"], ["Lara", "Fabian", "lara@fabi.an", "lara"], ["Justin", "Bieber", "bieber@just.in", "whatdoyoumean"], ["Brad", "Pitt", "bradlebg@hotmail.com", "angelina"], ["Nicolas", "Sarkozy", "sarkozy@repu.fr", "nicolaspresident"]]
+    String[][] utilisateurs = [["John", "Lennon", "imagine@paris.fr", "prayforparis",true], ["Michel", "Polnareff", "michel75@free.fr", "123456789",false], ["Lara", "Fabian", "lara@fabi.an", "lara",false], ["Justin", "Bieber", "bieber@just.in", "whatdoyoumean",false], ["Brad", "Pitt", "bradlebg@hotmail.com", "angelina",false], ["Nicolas", "Sarkozy", "sarkozy@repu.fr", "nicolaspresident",false]]
     String[] emplacements = ["15 rue du Boucher Irlandais", "17 rue de la mairie provencale", "154 avenue de la republique", "24 rue des amants", "15 place Garibaldi", "54 rue Arson", "12 avenue Jean Medecin", "87 boulevard Victor Hugo", "879 place Bellecour", "1 place Vendôme", "11 rue du boulanger", "71 ruelle inconnue", "31 impasse capasse", "18 rue du Gesu", "100 avenue des dieux"]
     String[] commentaires = ["Je recommande","Très bon choix","J'ai déja vu mieux","À éviter","Fuyez!"]
     ArrayList<POI> listePOI = new ArrayList<POI>()
@@ -29,7 +29,7 @@ class BootStrap {
             groupe.save(flush: true, failOnError: true)
         }
         utilisateurs.each { String[] nUser ->
-            def user = new Utilisateur(nom: nUser[0], prenom: nUser[1], mail: nUser[2], password: (nUser[3]).encodeAsMD5())
+            def user = new Utilisateur(nom: nUser[0], prenom: nUser[1], mail: nUser[2], password: (nUser[3]).encodeAsMD5(), isAdmin: nUser[4])
             listeU.add(user)
             user.save(flush: true, failOnError: true)
         }
