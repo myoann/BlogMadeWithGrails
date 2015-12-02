@@ -9,7 +9,7 @@ class UtilisateurController {
         session.utilisateur = utilisateur
         if (utilisateur) {
             def idUtilisateur = utilisateur.getId()
-            redirect(action: 'show_custom', id: idUtilisateur)
+            redirect(action: 'show', id: idUtilisateur)
         } else {
             redirect(uri: '/projet/login')
         }

@@ -34,7 +34,7 @@
 		<g:message code="utilisateur.password.label" default="Password" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textArea name="password" cols="40" rows="5" maxlength="255" required="" value="${utilisateurInstance?.password}"/>
+	<g:field type="password" name="password" required="" value="${utilisateurInstance?.password}"/>
 
 </div>
 
@@ -53,6 +53,15 @@
 </li>
 </ul>
 
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: utilisateurInstance, field: 'isAdmin', 'error')} ">
+	<label for="isAdmin">
+		<g:message code="utilisateur.isAdmin.label" default="Is Admin" />
+		
+	</label>
+	<g:checkBox name="isAdmin" value="${utilisateurInstance?.isAdmin}" />
 
 </div>
 

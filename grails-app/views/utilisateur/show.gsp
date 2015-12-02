@@ -70,6 +70,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${utilisateurInstance?.isAdmin}">
+				<li class="fieldcontain">
+					<span id="isAdmin-label" class="property-label"><g:message code="utilisateur.isAdmin.label" default="Is Admin" /></span>
+					
+						<span class="property-value" aria-labelledby="isAdmin-label"><g:formatBoolean boolean="${utilisateurInstance?.isAdmin}" /></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${utilisateurInstance?.note}">
 				<li class="fieldcontain">
 					<span id="note-label" class="property-label"><g:message code="utilisateur.note.label" default="Note" /></span>

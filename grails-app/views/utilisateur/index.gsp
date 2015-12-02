@@ -32,6 +32,8 @@
 					
 						<g:sortableColumn property="password" title="${message(code: 'utilisateur.password.label', default: 'Password')}" />
 					
+						<g:sortableColumn property="isAdmin" title="${message(code: 'utilisateur.isAdmin.label', default: 'Is Admin')}" />
+					
 					</tr>
 				</thead>
 				<tbody>
@@ -45,6 +47,8 @@
 						<td>${fieldValue(bean: utilisateurInstance, field: "mail")}</td>
 					
 						<td>${fieldValue(bean: utilisateurInstance, field: "password")}</td>
+					
+						<td><g:formatBoolean boolean="${utilisateurInstance.isAdmin}" /></td>
 					
 					</tr>
 				</g:each>
