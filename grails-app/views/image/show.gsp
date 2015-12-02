@@ -35,6 +35,7 @@
 				<g:if test="${imageInstance?.image}">
 				<li class="fieldcontain">
 					<span id="image-label" class="property-label"><g:message code="image.image.label" default="Image" /></span>
+                    <td><asset:image src='${fieldValue(bean: imageInstance, field: "source")}' width="200" height="200"/> </td>
 					
 				</li>
 				</g:if>

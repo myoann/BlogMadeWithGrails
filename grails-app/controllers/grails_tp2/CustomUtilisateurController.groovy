@@ -2,7 +2,7 @@ import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
-class UtilisateurController {
+class CustomUtilisateurController {
 
     def doLogin = {
         def utilisateur = Utilisateur.findWhere(mail: params['email'], password: params['password'].encodeAsMD5())

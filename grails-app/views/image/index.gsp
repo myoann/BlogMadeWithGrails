@@ -35,9 +35,9 @@
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
 						<td><g:link action="show" id="${imageInstance.id}">${fieldValue(bean: imageInstance, field: "source")}</g:link></td>
-					
-						<td>${fieldValue(bean: imageInstance, field: "image")}</td>
-					
+
+                        <td><asset:image src='${fieldValue(bean: imageInstance, field: "source")}' width="200" height="200"/> </td>
+
 					</tr>
 				</g:each>
 				</tbody>
