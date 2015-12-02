@@ -12,8 +12,8 @@
 		<div class="nav" role="navigation">
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+				<li><g:link controller="front" class="list" action="indexGroupe"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+				<li><g:link controller="front" class="create" action="createGroupe"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 			</ul>
 		</div>
 		<div id="show-groupe" class="content scaffold-show" role="main">
@@ -46,7 +46,7 @@
 					<span id="image-label" class="property-label"><g:message code="groupe.image.label" default="Image" /></span>
 					
 						<g:each in="${groupeInstance.image}" var="i">
-						<span class="property-value" aria-labelledby="image-label"><g:link controller="image" action="show" id="${i.id}">${i?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="image-label"><g:link controller="front" action="showImage" id="${i.id}">${i?.encodeAsHTML()}</g:link></span>
 						</g:each>
 					
 				</li>
@@ -57,16 +57,16 @@
 					<span id="pointInteret-label" class="property-label"><g:message code="groupe.pointInteret.label" default="Point Interet" /></span>
 					
 						<g:each in="${groupeInstance.pointInteret}" var="p">
-						<span class="property-value" aria-labelledby="pointInteret-label"><g:link controller="POI" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="pointInteret-label"><g:link controller="front" action="showPOI" id="${p.id}">${p?.encodeAsHTML()}</g:link></span>
 						</g:each>
 					
 				</li>
 				</g:if>
 			
 			</ol>
-			<g:form url="[resource:groupeInstance, action:'delete']" method="DELETE">
+			<g:form url="[resource:groupeInstance, controller:'front',action:'delete']" method="DELETE">
 				<fieldset class="buttons">
-					<g:link class="edit" action="edit" resource="${groupeInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
+					<g:link class="edit" controller="front" action="editGroupe" resource="${groupeInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
 				</fieldset>
 			</g:form>
 		</div>

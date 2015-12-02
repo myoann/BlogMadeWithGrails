@@ -11,8 +11,8 @@
 		<div class="nav" role="navigation">
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+				<li><g:link class="list" controller="front" action="indexGroupe"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+				<li><g:link class="create" controller="front" action="createGroupe"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 			</ul>
 		</div>
 		<div id="edit-groupe" class="content scaffold-edit" role="main">
@@ -27,13 +27,13 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form url="[resource:groupeInstance, action:'update']" method="PUT" >
+			<g:form url="[resource:groupeInstance,controller:'front', action:'update']" method="PUT" >
 				<g:hiddenField name="version" value="${groupeInstance?.version}" />
 				<fieldset class="form">
 					<g:render template="form"/>
 				</fieldset>
 				<fieldset class="buttons">
-					<g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
+					<g:actionSubmit class="save" controller="front" action="updateGroupe" value="${message(code: 'default.button.update.label', default: 'Update')}" />
 				</fieldset>
 			</g:form>
 		</div>
