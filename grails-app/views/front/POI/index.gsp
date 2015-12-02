@@ -24,7 +24,7 @@
 			<thead>
 					<tr>
 					
-						<g:sortableColumn property="nom" title="${message(code: 'groupe.nom.label', default: 'Nom')}" />
+						<g:sortableColumn property="nom"  title="${message(code: 'groupe.nom.label', default: 'Nom')}" />
 					
 						<g:sortableColumn property="dateDeCreation" title="${message(code: 'groupe.dateDeCreation.label', default: 'Date De Creation')}" />
 					
